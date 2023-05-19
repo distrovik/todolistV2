@@ -10,7 +10,12 @@ const _ = require("lodash");
 
 mongoose.connect("mongodb+srv://nixnicksnix:Darkstar96@cluster0.hstk6kt.mongodb.net/todolistDB", {
   useNewUrlParser: true,
-});
+})
+.then(
+    app.listen(process.env.PORT || port, () => {
+    console.log("Server started on port " + port);
+  })
+  );
 
 const itemSchema = {
   name: {
@@ -43,10 +48,6 @@ const defaultItems = [item1, item2, item3];
 //   });
 
 app.set("view engine", "ejs");
-
-app.listen(port, () => {
-  console.log("Server started on port " + port);
-});
 
 app.use(express.urlencoded({ extended: true }));
 
