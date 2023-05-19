@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 420;
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
@@ -12,8 +11,8 @@ mongoose.connect("mongodb+srv://nixnicksnix:Darkstar96@cluster0.hstk6kt.mongodb.
   useNewUrlParser: true,
 })
 .then(
-    app.listen(process.env.PORT || port, () => {
-    console.log("Server started on port " + port);
+    app.listen(process.env.PORT || 3000, () => {
+    console.log("Server started on port 3000");
   })
   );
 
